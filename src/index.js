@@ -13,6 +13,10 @@ const player2 = {
   pontos: 0,
 };
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function rollDice() {
   return Math.floor(Math.random() * 6) + 1;
 }
@@ -20,4 +24,6 @@ async function rollDice() {
  // A presença dos parênteses no início e fim tornam a função auto invocável (auto invoke), permitindo que seja executada durante o Run do projeto
 (async function main() {
   console.log(`Que comece a corrida entre ${player1.nome} e ${player2.nome}! 🏁`);
+  await sleep(10000)
+  console.log("vamos")
 })(); 
